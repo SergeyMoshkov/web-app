@@ -6,6 +6,8 @@ import (
 	"net/http"
 )
 
+const portNumber = ":8080"
+
 // Home it is function for home page
 func Home(w http.ResponseWriter, _ *http.Request) {
 	sum := AddValues(2, 4)
@@ -16,7 +18,7 @@ func Home(w http.ResponseWriter, _ *http.Request) {
 	fmt.Println(n)
 }
 
-// About it is function for home page
+// About it is function for about page
 func About(w http.ResponseWriter, _ *http.Request) {
 	sum := AddValues(2, 2)
 	n, err := fmt.Fprintf(w, "This is about page and sum 2 + 2 is %d", sum)
@@ -26,13 +28,16 @@ func About(w http.ResponseWriter, _ *http.Request) {
 	fmt.Println(n)
 }
 
+// AddValues this function added two digit
 func AddValues(x, y int) int {
 	return x + y
 }
 
+// main the main function our application
 func main() {
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
 
-	_ = http.ListenAndServe(":8080", nil)
+	fmt.Printf("Application run on port %s\n", portNumber)
+	_ = http.ListenAndServe(portNumber, nil)
 }
