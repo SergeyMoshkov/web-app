@@ -45,7 +45,7 @@ func Divide(w http.ResponseWriter, _ *http.Request) {
 
 // Divide this function divide two digit and check divide by zero
 func divideValues(x, y float32) (float32, error) {
-	if y <= 0 {
+	if y == 0 {
 		err := errors.New("cannot divide by zero")
 		return 0, err
 	}
