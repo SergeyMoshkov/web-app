@@ -6,7 +6,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
         <div>
           <h1>Я скоро выучу golang и javascript с react!!!</h1>
         </div>

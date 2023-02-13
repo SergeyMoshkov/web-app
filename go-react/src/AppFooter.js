@@ -8,7 +8,7 @@ class AppFooter extends Component {
         return (
             <Fragment>
                 <hr />
-                <p>Copyright &copy; 2020 - { currentYear} Acme Ltd.</p>
+                <p>Copyright &copy; 2020 - { currentYear } Acme Ltd.</p>
             </Fragment>
         );
     }
